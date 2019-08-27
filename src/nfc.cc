@@ -150,14 +150,14 @@ namespace {
         void HandleErrorCallback() {
             Local<Value> argv[2];
             argv[0] = Nan::New("error").ToLocalChecked();
-            argv[1] = Nan::Error(AsyncProgressWorker::ErrorMessage());
+            argv[1] = Nan::Error(Nan::AsyncProgressWorker::ErrorMessage());
 
             Local<Object> self = GetFromPersistent("self").As<Object>();
             Nan::MakeCallback(self, "emit", 2, argv);
             HandleOKCallback();
         }
 
-        void Execute(const AsyncProgressWorker::ExecutionProgress& progress) {
+        void Execute(const Nan::AsyncProgressWorker::ExecutionProgress& progress) {
             while(baton->run && nfc_initiator_select_passive_target(baton->pnd, nmMifare, NULL, 0, &baton->nt) > 0) {
                 baton->claimed = true;
                 tag = new NFCCard();
@@ -354,7 +354,7 @@ namespace {
             Local<Value> argv[2];
             argv[0] = Nan::New("read").ToLocalChecked();
             argv[1] = object;
-            
+
             Local<Object> self = GetFromPersistent("self").As<Object>();
             Nan::MakeCallback(self, "emit", 2, argv);
         }

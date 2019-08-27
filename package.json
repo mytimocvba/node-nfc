@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Camme/node-nfc.git"
+    "url": "https://github.com/mytimocvba/node-nfc.git"
   },
   "keywords": [
     "nfc"
   ],
   "dependencies": {
-     "ndef": "0.1.2",
-     "bindings": "1.2.1",
-     "nan": "2.3.5",
-     "node-gyp": "3.0.3"
+    "ndef": "^0.2.0",
+    "bindings": "^1.5.0",
+    "nan": "^2.14.0",
+    "node-gyp": "^5.0.3"
   },
   "author": "Camilo Tapia <camilo.tapia@gmail.com>",
   "maintainers": [
@@ -26,6 +26,11 @@
       "name": "Jeroen Vollenbrock",
       "email": "jeroen@athom.nl",
       "url": "http://athom.nl"
+    },
+    {
+      "name": "Stijn Debakker",
+      "email": "stijn@quibax.com",
+      "url": "http://quibax.com"
     }
   ],
   "license": "MIT",
